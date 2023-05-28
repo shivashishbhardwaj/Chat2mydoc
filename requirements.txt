@@ -6,3 +6,4 @@ pycryptodome
 boto3
 redis
 retry
+langchain
