@@ -6,18 +6,18 @@ import os
 DEFAULT_USER = os.getenv('COMMUNITY_USER','')
 
 def use_key(key):
-	openai.use_key(key)
+	openAI.use_key(key)
 
 usage_stats = stats.get_stats(user=DEFAULT_USER)
 def set_user(user):
 	global usage_stats
 	usage_stats = stats.get_stats(user=user)
-	openai.set_global('user', user)
-	openai.add_callback('after', stats_callback)
+	openAI.set_global('user', user)
+	openAI.add_callback('after', stats_callback)
 
 def complete(text, **kw):
 	model = kw.get('model','gpt-3.5-turbo')
-	llm = openai.model(model)
+	llm = openAI.model(model)
 	llm.config['pre_prompt'] = 'output only in raw text' # for chat models
 	resp = llm.complete(text, **kw)
 	resp['model'] = model
@@ -25,7 +25,7 @@ def complete(text, **kw):
 
 def embedding(text, **kw):
 	model = kw.get('model','text-embedding-ada-002')
-	llm = openai.model(model)
+	llm = openAI.model(model)
 	resp = llm.embed(text, **kw)
 	resp['model'] = model
 	return resp
