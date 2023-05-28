@@ -1,4 +1,5 @@
-from ai_bricks.api import openai
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.llms import OpenAI
 import stats
 import os
 
