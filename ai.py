@@ -37,7 +37,7 @@ def embeddings(texts, **kw):
 	resp['model'] = model
 	return resp
 
-tokenizer_model = openai.model('text-davinci-003')
+tokenizer_model = openAI.model('text-davinci-003')
 def get_token_count(text):
 	return tokenizer_model.token_count(text)
 
