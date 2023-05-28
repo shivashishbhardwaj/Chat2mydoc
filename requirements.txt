@@ -1,0 +1,8 @@
+streamlit
+pypdf
+scikit-learn
+numpy
+pycryptodome
+boto3
+redis
+retry
